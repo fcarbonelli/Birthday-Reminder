@@ -1,4 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
+  background-color: #f1f1f1;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -10,4 +15,64 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.circle{
+  position: absolute;
+  top: 40%; 
+  left: 60%;
+    z-index: -1;
+  width: 450px;
+  height: 450px;
+  background: linear-gradient(to bottom, #14b8a6 40%, #fe6c4c 50%);
+  filter: blur(150px)
+}
+
+.circle-2{
+  position: absolute;
+  top: 30%; 
+  left: 50%;
+    z-index: -1;
+  width: 200px;
+  height: 200px;
+  background: linear-gradient(to bottom, #14b8a6 70%, #fe6c4c 50%);
+  filter: blur(150px)
+}
+
+.circle-3{
+  position: absolute;
+  top: 90%; 
+  left: 10%;
+    z-index: -1;
+  width: 300px;
+  height: 300px;
+  background: linear-gradient(to bottom, #36eeb7 40%, #16f08a 50%);
+  transform: translate(-60%, -60%);
+  filter: blur(200px)
+}
+.circle-4{
+  position: absolute;
+  top: 60%; 
+  left: 80%;
+    z-index: -1;
+  width: 200px;
+  height: 200px;
+  background: linear-gradient(to bottom, #f5e507 40%, #16f08a 50%);
+  transform: translate(-60%, -60%);
+  filter: blur(150px)
+}
+
+@media (max-width: 768px) {
+  .circle {
+    width: 250px;
+    height: 250px;
+    transform: translate(-60%, -60%) scale(0.6);
+  }
+
+}
+
+@media (max-width: 767px) {
+  #grad {
+    background-image: linear-gradient(to top, rgb(204, 251, 241), rgb(241, 241, 241), rgb(241, 241, 241));
+  }
 }
