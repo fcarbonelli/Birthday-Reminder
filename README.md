@@ -1,5 +1,10 @@
 # Birthday Reminder App
-![home](https://imgur.com/a/WspbSO5)
+
+- Birthday Reminder is an app that lets you invite your friends to join your birthdays list.
+- Once you sign up, you will get an unique link to share with your friends.
+- You will see everyfriend listed in the dashboard and you will get an email get the dates arrive!
+  
+![home](https://i.imgur.com/YTFNVi3.png)
 
 # Getting Started with Create React App
 
