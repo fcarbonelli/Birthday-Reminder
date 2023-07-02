@@ -4,6 +4,7 @@ export default function EditModal({ onClose, link, friend }) {
 
     const [status, setStatus] = useState(true);
     const [uniqueLink, setUniqueLink] = useState("");
+    const [deleteModal, setDeleteModal] = useState(false);
 
 
     useEffect(() => {
@@ -19,15 +20,10 @@ export default function EditModal({ onClose, link, friend }) {
             status: status,
             friendId: friend.friendId
         };
-        console.log(requestBody)
 
         try {
             const response = await fetch('https://6kkx92zz75.execute-api.us-east-1.amazonaws.com/friend/status', {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Access-Control-Allow-Origin': '*'
-              },
             body: JSON.stringify(requestBody)
             });
 
@@ -45,6 +41,32 @@ export default function EditModal({ onClose, link, friend }) {
         onClose(false);
     };
 
+    const handleDeleteModal = () => {
+        setDeleteModal(!deleteModal)
+    };
+
+    const handleDelete = () => {
+        const endpoint = `https://6kkx92zz75.execute-api.us-east-1.amazonaws.com/friend/${link}/id/${friend.friendId}`;
+
+        fetch(endpoint, {
+            method: 'DELETE',
+            headers: {
+            'Content-Type': 'application/json',
+            },
+        })
+            .then(response => {
+            if (response.ok) {
+                handleCancel()
+                window.location.reload();
+            } else {
+                console.error('Failed to delete friend');
+            }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+    };
+
     const handleStatusChange = (event) => {
         setStatus(event.target.value);
     };
@@ -53,7 +75,7 @@ export default function EditModal({ onClose, link, friend }) {
     <div class="relative flex justify-center">
         <div class="fixed inset-0 z-10 overflow-y-auto"  aria-labelledby="modal-title" role="dialog" aria-modal="true">
             <div class="flex items-end justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0">
-            <div class="fixed inset-0 bg-gray-900 bg-opacity-50 transition-opacity" aria-hidden="true"></div>
+            <div class="fixed inset-0 bg-gray-900 bg-opacity-20 transition-opacity" aria-hidden="true"></div>
                 <span class="hidden sm:inline-block sm:h-screen sm:align-middle" aria-hidden="true">&#8203;</span>
                     <div class="relative inline-block px-4 pt-5 pb-4 overflow-hidden text-left align-bottom transition-all transform bg-white rounded-lg shadow-xl dark:bg-gray-900 sm:my-8 sm:w-full sm:max-w-sm sm:p-6 sm:align-middle">
                         <h3 class="text-lg font-medium leading-6 text-gray-800 capitalize dark:text-white" id="modal-title">
@@ -87,7 +109,11 @@ export default function EditModal({ onClose, link, friend }) {
                             </div>
 
                             <div class="mt-4 flex justify-end">
-                                <button onClick={handleCancel} type="button" class="px-4 py-2 text-sm font-medium text-gray-700 capitalize transition-colors duration-300 transform border border-gray-200 rounded-md dark:text-gray-200 dark:border-gray-700 dark:hover:bg-gray-800 hover:bg-gray-100 focus:outline-none focus:ring focus:ring-gray-300 focus:ring-opacity-40">
+                                <button onClick={handleDeleteModal} type="button" class="ml-3 px-4 py-2 text-sm font-medium text-white capitalize transition-colors duration-300 transform bg-red-600 rounded-md hover:bg-red-500 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40">
+                                Delete
+                                </button>
+
+                                <button onClick={handleCancel} type="button" class="ml-3 px-4 py-2 text-sm font-medium text-gray-700 capitalize transition-colors duration-300 transform border border-gray-200 rounded-md dark:text-gray-200 dark:border-gray-700 dark:hover:bg-gray-800 hover:bg-gray-100 focus:outline-none focus:ring focus:ring-gray-300 focus:ring-opacity-40">
                                 Cancel
                                 </button>
 
@@ -95,6 +121,30 @@ export default function EditModal({ onClose, link, friend }) {
                                 Save
                                 </button>
                             </div>
+                            {deleteModal && (
+                            <>
+                                <div className="mt-4 flex justify-center">
+                                    <p className="mt-2 text-sm text-gray-500 dark:text-gray-400"> Are you sure you want to delete this friend?</p>
+                                </div>
+                                
+                                <div className="mt-4 flex justify-center">
+                                <button
+                                    onClick={handleDeleteModal}
+                                    type="button"
+                                    className="ml-3 px-4 py-2 text-sm font-medium text-gray-700 capitalize transition-colors duration-300 transform border border-gray-200 rounded-md dark:text-gray-200 dark:border-gray-700 dark:hover:bg-gray-800 hover:bg-gray-100 focus:outline-none focus:ring focus:ring-gray-300 focus:ring-opacity-40"
+                                >
+                                    No
+                                </button>
+                                <button
+                                    onClick={handleDelete}
+                                    type="button"
+                                    className="ml-3 px-4 py-2 text-sm font-medium text-white capitalize transition-colors duration-300 transform bg-red-600 rounded-md hover:bg-red-500 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40"
+                                >
+                                    Yes, delete
+                                </button>
+                                </div>
+                            </>
+                            )}
                         </form>
                     </div>
             </div>

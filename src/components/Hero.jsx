@@ -40,13 +40,13 @@ export default function Hero() {
                                   <span class="inline">Get Started</span>
                                 </button>
                               </div>
-                              <p class="mt-3 text-slate-500">Get notified when we launch!</p>
+                              
                             </form>
                           </div>
                         </div>
                       </div>
                       <div class="block w-full p-8 mt-12 bg-slate-200 lg:mt-0 rounded-3xl">
-                        <img alt="hero" class="object-cover object-center w-full h-full mx-auto lg:ml-auto rounded-2xl" src="https://img.freepik.com/foto-gratis/representacion-3d-avatares-personas-llamada-zoom_23-2149576736.jpg?w=1380&t=st=1687835099~exp=1687835699~hmac=0c2d9ff545a834c1cf2d70864656f7bf4ad64933aeacf1ab1c5d391ef832c2aa"></img>
+                        <img alt="hero" class="object-cover object-center w-full h-full mx-auto lg:ml-auto rounded-2xl" src="https://i.imgur.com/zTxpcHR.jpg"></img>
                       </div>
                     </div>
                   </div>
