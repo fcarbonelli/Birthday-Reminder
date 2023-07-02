@@ -65,7 +65,7 @@ export default function Signup() {
             {showConfirmation ? <Confirmation /> : (
             <div class="flex w-full max-w-sm mx-auto overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800 lg:max-w-4xl">
                 <div class="hidden bg-cover bg-center lg:block lg:w-1/2" 
-                    style={{ backgroundImage: "url('https://img.freepik.com/free-photo/3d-balloons-present-box_23-2148993002.jpg?w=826&t=st=1687036406~exp=1687037006~hmac=79318bb9ef45b4ffd4d1c442de3297d2317d40bae07c313297bab7d4ff0ffba2')" }}></div>
+                    style={{ backgroundImage: "url('https://i.imgur.com/CYtKeB1.png')" }}></div>
 
 
                     <form onSubmit={onSubmit} class="w-full px-6 py-5 md:px-8 lg:w-1/2">

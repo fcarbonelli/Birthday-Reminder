@@ -59,7 +59,7 @@ export default function Login() {
         <div className="flex items-center justify-center mt-20">
             <div class="flex w-full max-w-sm mx-auto overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800 lg:max-w-4xl">
                 <div class="hidden bg-cover bg-center lg:block lg:w-1/2" 
-                    style={{ backgroundImage: "url('https://img.freepik.com/foto-gratis/caja-regalo-purpura-sorpresa-regalo-minimo-fiesta-cumpleanos-icono-celebracion-ilustracion-3d_56104-2098.jpg?w=1060&t=st=1687835339~exp=1687835939~hmac=d90cfd45e578bbb9e74c15d437cc8602f1b51857be706a6e713a22c4f82d7af2')" }}></div>
+                    style={{ backgroundImage: "url('https://i.imgur.com/UJMZNop.jpg')" }}></div>
 
 
                     <form onSubmit={onSubmit} class="w-full px-6 py-5 md:px-8 lg:w-1/2">

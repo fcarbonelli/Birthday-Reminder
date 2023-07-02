@@ -1,7 +1,8 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export default function ThankYou() {
-  
+    const navigate = useNavigate();
 
     return (
         
@@ -19,20 +20,21 @@ export default function ThankYou() {
                         </div>
     
                         <div class="mt-2 text-center">
-                            <h3 class="text-lg font-medium leading-6 text-gray-800 capitalize dark:text-white" id="modal-title">Archive Project</h3>
+                            <h3 class="text-lg font-medium leading-6 text-gray-800 capitalize dark:text-white" id="modal-title">Thank you!</h3>
                             <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">
-                                Lorem, ipsum dolor sit amet consectetur
-                                adipisicing elit. Aspernatur dolorum aliquam ea, ratione deleniti porro officia? Explicabo
-                                maiores suscipit.
+                                Your friend will receive an email when your birthday arrives.
+                            </p>
+                            <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">
+                                Want to try it yourself? Sign Up. Its free!
                             </p>
                         </div>
                     </div>
     
                     <div class="mt-5 sm:flex sm:items-center sm:justify-between">
-                        <a href="#" class="text-sm text-blue-500 hover:underline">Learn more</a>
+                        <a href="/" class="text-sm text-blue-500 hover:underline">Learn more</a>
     
                         <div class="sm:flex sm:items-center ">
-                            <button class="w-full px-4 py-2 mt-2 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-[#14B8A6] rounded-md sm:w-auto sm:mt-0 hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40">
+                            <button onClick={() => navigate('/signup')} class="w-full px-4 py-2 mt-2 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-[#14B8A6] rounded-md sm:w-auto sm:mt-0 hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40">
                                 Sign Up!
                             </button>
                         </div>

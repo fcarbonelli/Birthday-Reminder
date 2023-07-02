@@ -10,7 +10,6 @@ export default function FriendList({friends, link}) {
 
         const handleRowClick = (id) => {
             setEditModalVisible(true);
-            console.log("Clicked row with ID:",friends[id]);
             setSelectedFriend(friends[id])
         };
 
