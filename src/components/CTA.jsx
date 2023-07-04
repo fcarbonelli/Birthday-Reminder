@@ -8,7 +8,7 @@ export default function CTA() {
             <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700"/>
             <div class="overflow-hidden bg-white dark:bg-gray-900 lg:mx-8 lg:flex lg:max-w-6xl lg:w-full lg:shadow-md lg:rounded-xl">
                 <div class="lg:w-1/2">
-                    <div class="h-64 bg-cover lg:h-full" style={{ backgroundImage: "url('https://img.freepik.com/free-psd/3d-rendering-graphic-design_23-2149642696.jpg?w=1380&t=st=1688259150~exp=1688259750~hmac=16f50c9157389fc70bb0d123546d8ce864f441f86b3c092f89ff9cd0b7cc5d00')",backgroundSize: "contain",
+                    <div class="h-64 bg-cover lg:h-full" style={{ backgroundImage: "url('https://i.imgur.com/CzIYCYv.jpg')",backgroundSize: "contain",
       backgroundRepeat: "no-repeat", }}
                     ></div>
                 </div>

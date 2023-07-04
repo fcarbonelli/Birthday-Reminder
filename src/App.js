@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Analytics } from '@vercel/analytics/react';
 
 import Landing from "./components/Landing" 
 import Navbar from "./components/Navbar";
@@ -13,6 +14,7 @@ function App() {
   return (
     
     <Router>
+        <Analytics />
       <Navbar />
       <Routes>
         <Route path="/" element={ <Landing />} />
@@ -21,7 +23,6 @@ function App() {
         <Route path="/birthday" element={<Reminder />} />
         <Route path="/invite/:link" element={ <InviteForm />} />
         <Route path="/signup" element={ <Signup />} />
-
       </Routes>
     </Router>
   );
