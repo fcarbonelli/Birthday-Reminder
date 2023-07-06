@@ -13,7 +13,7 @@ export default function Hero() {
     };
 
     return (    
-      <section class="dark:bg-gray-900">
+      <section class="">
         <div class="relative items-center w-full px-5 py-24 mx-auto lg:px-16 lg:py-36 max-w-7xl md:px-12">
                   <div class="relative flex-col items-start m-auto align-middle">
                     <div class="grid grid-cols-1 gap-6 lg:gap-24 lg:grid-cols-2">
